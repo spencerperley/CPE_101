@@ -1,11 +1,10 @@
 
 
-aqiRanges = (0,50, 100, 150, 200, 300, 500)
+aqiRanges = (0, 50, 100, 150, 200, 300, 500)
 aqiDescriptions = ("Good", "Moderate", "Unhealthy for Sensitive Groups",
-                  "Unhealthy", "Very Unhealthy", "Hazardous")
+                   "Unhealthy", "Very Unhealthy", "Hazardous")
 
 aqiDescription = ""
-
 
 
 pm25ranges = (0, 12, 35.4, 55.4, 150.4, 250.4, 500.4)
@@ -18,7 +17,8 @@ coranges = (0, 4.4, 9.4, 12.4, 15.4, 30.4, 50.4)
 iHigh, iLow, cHigh, cLow, cP = 0, 0, 0, 0, 0
 
 
-pollutantRanges = {"PM2.5":pm25ranges,"PM10":pm10ranges,"NO2":no2ranges,"SO2":so2ranges,"CO":coranges}
+pollutantRanges = {"PM2.5": pm25ranges, "PM10": pm10ranges,
+                   "NO2": no2ranges, "SO2": so2ranges, "CO": coranges}
 keys = dict.keys(pollutantRanges)
 
 location = input("Where is this measurement taken from? ")
@@ -52,14 +52,14 @@ def calculateAQI(name, ranges):
             break
         index += 1
 
-    
     return(((iHigh-iLow)/(cHigh-cLow)*(cP-cLow))+iLow)
+
 
 results = []
 endMessages = []
 
 for key in keys:
-    result = calculateAQI(key,pollutantRanges[key])
+    result = calculateAQI(key, pollutantRanges[key])
     endMessages.append(f"The Air Quality Index of {key} is {result}")
     results.append(result)
 
@@ -68,7 +68,8 @@ maxAqi = max(results)
 index = 0
 for upper in aqiRanges:
     if maxAqi < upper:
-        print(f"The Air Quality Index in {location} is {maxAqi}, this is {aqiDescriptions[index - 1]}" )
+        print(
+            f"The Air Quality Index in {location} is {maxAqi}, this is {aqiDescriptions[index - 1]}")
         break
     index += 1
 
