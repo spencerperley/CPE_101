@@ -10,4 +10,9 @@ temp = int(input("Enter a tempature: "))
 lowers = [100,80,41,10]
 weather = ["Warning: Heat Wave","Hot","Normal","Cold"]
 for i in range(0,len(lowers)):
-    if temp
+    if temp < 10:
+        print("The temperature you entered is out of the accepted range")
+        break
+    elif (temp >= lowers[i]):
+        print(f"the weather at {temp} degrees fahrenheit is {weather[i]}")
+        break
