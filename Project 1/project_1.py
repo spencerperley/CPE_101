@@ -37,7 +37,7 @@ def takeInput(upperBound, message):
 
 
 def calculateAQI(name, ranges):
-    cP = takeInput(ranges[5], str(
+    cP = takeInput(ranges[6], str(
         f"Enter the value for the {name} concentration : "))
 
     index = 0
