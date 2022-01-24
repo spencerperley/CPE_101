@@ -17,13 +17,10 @@ coranges = (0, 4.4, 9.4, 12.4, 15.4, 30.4, 50.4)
 iHigh, iLow, cHigh, cLow, cP = 0, 0, 0, 0, 0
 
 
-pollutantRanges = {"PM2.5": pm25ranges, "PM10": pm10ranges,
-                   "NO2": no2ranges, "SO2": so2ranges, "CO": coranges}
-keys = dict.keys(pollutantRanges)
 
 location = input("Where is this measurement taken from? ")
 
-
+# This code only takes acceptable inputs and asks again if an out of boud input is entered
 def takeInput(upperBound, message):
     while True:
         tempinput = int(input(message))
@@ -45,8 +42,17 @@ def calculateAQI(name, ranges):
 
         if cP < upper:
             cHigh = upper
+            # IMPORTANT NOTE:
+            # This code uses the uperbound of the previous index as the lower bound.
+            # I discussed this change with Sumona and we agreed that it was a good
+            # change as it results in a more reasonable result when edge casses in 
+            # between the specified ranges are entered. This will result in this 
+            # program returning slightly different results but I talked with Sumona 
+            # and she just said to write out a coment that explaid this change so that 
+            # the TA will know why 
+            
             cLow = ranges[index - 1]
-            iHigh = aqiRanges[index]
+            iHigh  = aqiRanges[index]
             iLow = aqiRanges[index - 1]
 
             break
@@ -58,6 +64,12 @@ def calculateAQI(name, ranges):
 results = []
 endMessages = []
 
+# hashmap for 
+pollutantRanges = {"PM2.5": pm25ranges, "PM10": pm10ranges,
+                   "NO2": no2ranges, "SO2": so2ranges, "CO": coranges}
+keys = dict.keys(pollutantRanges)
+
+#iterate over the polutants to receive the data and prosses it
 for key in keys:
     result = calculateAQI(key, pollutantRanges[key])
     endMessages.append(f"The Air Quality Index of {key} is {result}")
