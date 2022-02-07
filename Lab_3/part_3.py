@@ -4,10 +4,10 @@ i = 0
 for student in list_student:
     sum = 0
     max = 0
-    for mark in list_marks[i]:
-        if mark > max:
-            max = mark
-        sum += mark
+    for marks in list_marks[i]:
+        if marks > max:
+            max = marks
+        sum += marks
     
     print(f"{student} received an average score of {sum/3} and a max score of {max}")
     
