@@ -1,5 +1,3 @@
-
-
 aqiRanges = (0, 50, 100, 150, 200, 300, 500)
 aqiDescriptions = ("Good", "Moderate", "Unhealthy for Sensitive Groups",
                    "Unhealthy", "Very Unhealthy", "Hazardous")
@@ -23,7 +21,7 @@ location = input("Where is this measurement taken from? ")
 # This code only takes acceptable inputs and asks again if an out of boud input is entered
 def takeInput(upperBound, message):
     while True:
-        tempinput = int(input(message))
+        tempinput = float(input(message))
         if (tempinput < 0) or (tempinput > upperBound):
             print(
                 f"Entered value is out of range, please use a value between 0 and {upperBound}")
@@ -40,7 +38,7 @@ def calculateAQI(name, ranges):
     index = 0
     for upper in ranges:
 
-        if cP < upper:
+        if cP <= upper:
             cHigh = upper
             # IMPORTANT NOTE:
             # This code uses the uperbound of the previous index as the lower bound.
@@ -79,7 +77,7 @@ maxAqi = max(results)
 
 index = 0
 for upper in aqiRanges:
-    if maxAqi < upper:
+    if maxAqi <= upper:
         print(
             f"The Air Quality Index in {location} is {maxAqi}, this is {aqiDescriptions[index - 1]}")
         break

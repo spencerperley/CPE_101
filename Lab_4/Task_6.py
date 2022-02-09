@@ -17,4 +17,4 @@ def makeEmail(name):
     return(email)
     
     
-print(makeEmail("Sp en cer Perley "))
+print(makeEmail(""))
