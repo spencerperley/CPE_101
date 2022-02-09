@@ -2,7 +2,8 @@
 #note, i fixed the helper code so it would run on my system. it was giving me an error before 
 
 # Helper Code 1
-Path = "C:\\Users\\Spencer\\Documents\\GitHub\\CPE_101\\Project2\\" 
+# Path = "C:\\Users\\Spencer\\Documents\\GitHub\\CPE_101\\Project2\\" 
+Path = "C:\\Users\\spenc\\OneDrive\\Documents\\GitHub\\CPE_101\\Project2\\"
 bach_data = []
 with open(Path + "Bachelors.txt", "r") as file:
     for num in file:
