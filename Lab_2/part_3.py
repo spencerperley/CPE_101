@@ -9,4 +9,3 @@ for bracket in brackets:
         print(f"The US Federal tax on an income of USD {income} is USD {tax} tax")
         break
         
-

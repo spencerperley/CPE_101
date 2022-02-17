@@ -1,9 +1,9 @@
 ################## Helper Code Below -- don't delete! ##################
-#note, i fixed the helper code so it would run on my system. it was giving me an error before 
+#Note, I fixed the helper code so it would run on my system. it was giving me an error  before 
 
 # Helper Code 1
-# Path = "C:\\Users\\Spencer\\Documents\\GitHub\\CPE_101\\Project2\\" 
-Path = "C:\\Users\\spenc\\OneDrive\\Documents\\GitHub\\CPE_101\\Project2\\"
+Path = "C:\\Users\\Spencer\\Documents\\GitHub\\CPE_101\\Project2\\" 
+#Path = "C:\\Users\\spenc\\OneDrive\\Documents\\GitHub\\CPE_101\\Project2\\"
 bach_data = []
 with open(Path + "Bachelors.txt", "r") as file:
     for num in file:
@@ -64,7 +64,7 @@ def percent_bachelors(bach_data, pop_data): #loops over both lists and sums them
     for each county and returns the percentage of people
     with a bachelors or higher across all counties
     '''
-#print(percent_bachelors(bach_data, pop_data))
+print(percent_bachelors(bach_data, pop_data))
 
 # QUESTION 1.2
 
@@ -82,7 +82,7 @@ def income_above_50k(avg_income):
     above $50,000
     '''
 
-#print (income_above_50k(avg_income))
+print (income_above_50k(avg_income))
 # ---------------------------------------------------------------------------------------------------- #
 
 
@@ -97,7 +97,7 @@ def high_school_below_threshold(high_school_data, threshold):
     Takes a list of highschool graduation rates and a threshold 
     and returns the amount of counties that are under that threshold
     '''
-#print(high_school_below_threshold(high_school_data, 60))
+print(high_school_below_threshold(high_school_data, 60))
 # ---------------------------------------------------------------------------------------------------- #
 
 
@@ -112,7 +112,7 @@ def bachelors_above_threshold(bach_data, threshold):
     Returns the total number of counties with a percentage of bachelors strictly greater
     than the threshold percentage.
     '''
-#print(bachelors_above_threshold(bach_data, 60))
+print(bachelors_above_threshold(bach_data, 60))
 
 # ---------------------------------------------------------------------------------------------------- #
 
@@ -127,13 +127,22 @@ def below_poverty_total(poverty_data, pop_data):
     return sum
     ''' Takes data on population and poverty rates and calculates the total amount of people in poverty '''
 
-#print (below_poverty_total(poverty_data, pop_data))
+print (below_poverty_total(poverty_data, pop_data))
 # ---------------------------------------------------------------------------------------------------- #
 
 
 # TASK 5
 def percent_below_poverty(poverty_data, pop_data):
-    '''Try writing your own function description!'''
+    '''Takes the computation from the below poverty data and sums the population and returns the ration between them times 100'''
+    
+    below = below_poverty_total(poverty_data, pop_data)
+    total = 0
+    for pop in pop_data:
+        total += pop 
+
+    return (below/total)*100 #15.366286413307403
+
+print (percent_below_poverty(poverty_data, pop_data))
 
 
 # ---------------------------------------------------------------------------------------------------- #
@@ -141,5 +150,35 @@ def percent_below_poverty(poverty_data, pop_data):
 
 # TASK 6
 def education_vs_poverty(bach_data, poverty_info):
-    '''Try writing your own function descriptions!'''
+    '''Takes the poverty data as well as the bachelors degree data and separates them into 4 catagories based on the rate of bachelor's degrees and then finds the average of each groupand returns a formatted string containing that data'''
+    zero = [0,0]
+    ten = [0,0]
+    twenty = [0,0]
+    thirty = [0,0]
+    for i in range(0,len(poverty_info)):
+        if bach_data[i] >= 30:
+            thirty[0] += 1
+            thirty[1] += poverty_info[i]
+        elif bach_data[i] >= 20:
+            twenty[0] += 1
+            twenty[1] += poverty_info[i]
+        elif bach_data[i] >= 10:
+            ten[0] += 1
+            ten[1] += poverty_info[i]
+        elif bach_data[i] < 10:
+            zero[0] += 1
+            zero[1] += poverty_info[i]
+            
+    return (f"Average Poverty Levels:\nBachelors <10%: {zero[1]/zero[0]}\nBachelors >=10% and <20%: {ten[1]/ten[0]}\nBachelors >=20% and <30%: {twenty[1]/twenty[0]}\nBachelors >=30%: {thirty[1]/thirty[0]}")
 
+
+print(education_vs_poverty(bach_data, poverty_data))
+
+'''
+Task 7:
+The result given from comparing the education levels and the poverty data shows a clear inverse correlation between the two.
+This is insufficient evidence to come to any conclusion about why this is the case. 
+More evidence and research would be needed in order to decide weather there is a causal relationship between the two datasets.
+There is a whole host of evidence that shows that it is the case that there is a causal relationship between increase and education and reduction of poverty however, 
+there are many other factors at play and much more evidence than just their related rates was used to come to these conclusions.
+'''
