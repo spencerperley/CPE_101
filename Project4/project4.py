@@ -3,7 +3,7 @@ import sys, os, re
 # I used this .ppm viewer https://marketplace.visualstudio.com/items?itemName=martingrzzler.simple-ppm-viewer
 # it is the not the one that is specified in the lab however it is a lot easier to use as it just works in tandem with the text editor I am using.
 
-#*** My note to the grader: *** Im not sure if this is a windows specific path settup but it works on my computer so hopefully it should work. 
+#*** First note *** Im not sure if this is a windows specific path settup but it works on my computer so hopefully it should work. 
 # I took the directory thing from stack overflow and cited it as best I could as there were no directions on citing open source code in the syllabus that I could find.
 
 #*** Second note *** So I was having issues with opening files in this project and the past project so i did some fixing by including the full path 
@@ -12,6 +12,8 @@ import sys, os, re
 # so I know a lot of the stuff in here is now kind fluff that I did to get around that but it also has some nice features like screening the curret directory to make sure the correct file is there.
 # I just wanted to leave this note here to explain why it is more complicated and dirty than it should be. 
 
+#*** Third note *** This code is in my public github repo: https://github.com/spencerperley/CPE_101
+# I was told to disclose this after talking to an upper-classman who I asked about citing open source stuff in project in order to avoid being flaged by plagiarism detectors.
 
 directoryPath = os.path.dirname(os.path.abspath(sys.argv[0])) # I got this from this https://stackoverflow.com/questions/4060221/how-to-reliably-open-a-file-in-the-same-directory-as-the-currently-running-scrip
 
