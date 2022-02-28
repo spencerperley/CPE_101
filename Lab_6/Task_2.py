@@ -5,5 +5,11 @@ class MyUberCar:
         self.maxVelocity = maxVelocity
         self.destination = destination
         self.year = year
-        
+    def timeToDestinatino(self):
+        if self.destination == "Pismo":
+            return "25 minutes"
+        elif self.destination == "Airport":
+            return "10 minutes"
+        elif self.destination == "Hospital":
+            return "12 minutes"
 myCar = MyUberCar(input("Enter car model:"),input("Enter car color:"),int(input("Enter speed limit or velocity:")),input("Enter destination:"),int(input("Enter car manufacturing year:")))

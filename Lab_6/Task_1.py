@@ -1,6 +1,5 @@
 from math import sqrt
-from tkinter import OUTSIDE
-from turtle import distance
+
 class Point:
     def __init__(self,x,y):
         self.x=x

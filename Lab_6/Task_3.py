@@ -1,4 +1,5 @@
 class womenScientists:
+    
     allWomenSci = []
 
     def __init__(self, name, city, contry, birthYear):

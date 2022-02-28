@@ -1,4 +1,3 @@
-from cv2 import calcBackProject
 from Task_2 import *
 
 def testCalcAverage():
