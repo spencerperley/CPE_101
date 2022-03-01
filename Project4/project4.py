@@ -1,5 +1,8 @@
 import sys, os, re
 
+# Author: Spencer Perley
+# Date: 2/26/2022
+
 # I used this .ppm viewer https://marketplace.visualstudio.com/items?itemName=martingrzzler.simple-ppm-viewer
 # it is the not the one that is specified in the lab however it is a lot easier to use as it just works in tandem with the text editor I am using.
 
