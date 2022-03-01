@@ -9,7 +9,7 @@ import sys, os, re
 #*** Second note *** So I was having issues with opening files in this project and the past project so i did some fixing by including the full path 
 # in the open() string. now I was doing that because I have my whole CPE_101 folder open which has sub folders and that meant the files I was trying to access weren't exposed to the path that the interpreter was looking in 
 # now I realize this now after writing the code but I learned a good deal about how the windows file system, terminal and python terminal work.
-# so I know a lot of the stuff in here is now kind fluff that I did to get around that but it also has some nice features like screening the curret directory to make sure the correct file is there.
+# so I know a lot of the stuff in here is now kind fluff that I did to get around that but it also has some nice features like screening the curret directory to make sure the correct file is there without stoping the program.
 # I just wanted to leave this note here to explain why it is more complicated and dirty than it should be. 
 
 #*** Third note *** This code is in my public github repo: https://github.com/spencerperley/CPE_101
