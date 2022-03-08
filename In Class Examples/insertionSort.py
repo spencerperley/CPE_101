@@ -20,7 +20,7 @@ print (myList)
 testerList = sorted(myList)
 
 insertionSort(myList)
-print
+
 if testerList == myList:
     print("Pass")
     print(myList)
