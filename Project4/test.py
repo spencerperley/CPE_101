@@ -1,13 +1,3 @@
-import re
+a = [1,2,3,4,5]
 
-word = "im spencer"
-if re.fullmatch("[a-zA-Z0-9_ ]+",word):
-    print("yes")
-else:
-    print("no")
-
-
-a =[]
-
-if a :
-    print("kiasjfhba")
+print(a[-1::])
